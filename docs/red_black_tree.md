@@ -1,8 +1,8 @@
 ---
-description: ferum_std::red_black_tree
+description: financer_std::red_black_tree
 ---
 
-Ferum's implementation of a [Red Black Tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree).
+Financer's implementation of a [Red Black Tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree).
 A red black tree is a self balancing binary tree which performs rotations on tree manipulations to maintain a tree
 height of log(k), where k is the number of keys in the tree. Values with duplicate keys can be inserted into the
 tree; each value will stored in a linked list on each tree node. When a node no longer has any values, the node
@@ -26,7 +26,7 @@ The tree supports the following operations with the given time complexities:
 
 
 ```
-use ferum_std::red_black_tree::{Self, Tree};
+use financer_std::red_black_tree::{Self, Tree};
 
 // Create a tree with u128 values.
 let tree = red_black_tree::new<u128>();
@@ -57,14 +57,14 @@ red_black_tree::delete_key(&mut tree, 90);
 
 
 
-<a name="ferum_std_red_black_tree_TreePosition"></a>
+<a name="financer_std_red_black_tree_TreePosition"></a>
 
 # Struct `TreePosition`
 
 Used for traversal the tree in various directions.
 
 
-<pre><code><b>struct</b> <a href="red_black_tree.md#ferum_std_red_black_tree_TreePosition">TreePosition</a>&lt;V: <b>copy</b>, drop, store&gt; <b>has</b> <b>copy</b>, drop
+<pre><code><b>struct</b> <a href="red_black_tree.md#financer_std_red_black_tree_TreePosition">TreePosition</a>&lt;V: <b>copy</b>, drop, store&gt; <b>has</b> <b>copy</b>, drop
 </code></pre>
 
 
@@ -79,12 +79,12 @@ Used for traversal the tree in various directions.
 ## KEY_NOT_FOUND
 
 
-<a name="ferum_std_red_black_tree_KEY_NOT_FOUND"></a>
+<a name="financer_std_red_black_tree_KEY_NOT_FOUND"></a>
 
 Thrown when trying to perform an operation for a specific key but the key is not set.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_KEY_NOT_FOUND">KEY_NOT_FOUND</a>: u64 = 1;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_KEY_NOT_FOUND">KEY_NOT_FOUND</a>: u64 = 1;
 </code></pre>
 
 
@@ -94,12 +94,12 @@ Thrown when trying to perform an operation for a specific key but the key is not
 ## VALUE_NOT_FOUND
 
 
-<a name="ferum_std_red_black_tree_VALUE_NOT_FOUND"></a>
+<a name="financer_std_red_black_tree_VALUE_NOT_FOUND"></a>
 
 Thrown when attempting to delete a value that doesn't exist.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_VALUE_NOT_FOUND">VALUE_NOT_FOUND</a>: u64 = 2;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_VALUE_NOT_FOUND">VALUE_NOT_FOUND</a>: u64 = 2;
 </code></pre>
 
 
@@ -109,12 +109,12 @@ Thrown when attempting to delete a value that doesn't exist.
 ## EXPECTING_KEY_TO_BE_SET
 
 
-<a name="ferum_std_red_black_tree_EXPECTING_KEY_TO_BE_SET"></a>
+<a name="financer_std_red_black_tree_EXPECTING_KEY_TO_BE_SET"></a>
 
 Expecting the key to be set i.e. asserting leftChildNodeKeyIsSet, before accessing leftChildNodeKey.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_EXPECTING_KEY_TO_BE_SET">EXPECTING_KEY_TO_BE_SET</a>: u64 = 12;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_EXPECTING_KEY_TO_BE_SET">EXPECTING_KEY_TO_BE_SET</a>: u64 = 12;
 </code></pre>
 
 
@@ -124,12 +124,12 @@ Expecting the key to be set i.e. asserting leftChildNodeKeyIsSet, before accessi
 ## INVALID_FIX_DOUBLE_RED_OPERATION
 
 
-<a name="ferum_std_red_black_tree_INVALID_FIX_DOUBLE_RED_OPERATION"></a>
+<a name="financer_std_red_black_tree_INVALID_FIX_DOUBLE_RED_OPERATION"></a>
 
 Thrown when trying fix a double red but the tree doesn't follow the correct structure.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_INVALID_FIX_DOUBLE_RED_OPERATION">INVALID_FIX_DOUBLE_RED_OPERATION</a>: u64 = 8;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_INVALID_FIX_DOUBLE_RED_OPERATION">INVALID_FIX_DOUBLE_RED_OPERATION</a>: u64 = 8;
 </code></pre>
 
 
@@ -139,12 +139,12 @@ Thrown when trying fix a double red but the tree doesn't follow the correct stru
 ## INVALID_LEAF_NODE_HAS_LEFT_CHILD
 
 
-<a name="ferum_std_red_black_tree_INVALID_LEAF_NODE_HAS_LEFT_CHILD"></a>
+<a name="financer_std_red_black_tree_INVALID_LEAF_NODE_HAS_LEFT_CHILD"></a>
 
 Thrown when trying to perform an operation on a leaf node but that node has a left child.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_INVALID_LEAF_NODE_HAS_LEFT_CHILD">INVALID_LEAF_NODE_HAS_LEFT_CHILD</a>: u64 = 9;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_INVALID_LEAF_NODE_HAS_LEFT_CHILD">INVALID_LEAF_NODE_HAS_LEFT_CHILD</a>: u64 = 9;
 </code></pre>
 
 
@@ -154,12 +154,12 @@ Thrown when trying to perform an operation on a leaf node but that node has a le
 ## INVALID_LEAF_NODE_HAS_RIGHT_CHILD
 
 
-<a name="ferum_std_red_black_tree_INVALID_LEAF_NODE_HAS_RIGHT_CHILD"></a>
+<a name="financer_std_red_black_tree_INVALID_LEAF_NODE_HAS_RIGHT_CHILD"></a>
 
 Thrown when trying to perform an operation on a leaf node but that node has a right child.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_INVALID_LEAF_NODE_HAS_RIGHT_CHILD">INVALID_LEAF_NODE_HAS_RIGHT_CHILD</a>: u64 = 10;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_INVALID_LEAF_NODE_HAS_RIGHT_CHILD">INVALID_LEAF_NODE_HAS_RIGHT_CHILD</a>: u64 = 10;
 </code></pre>
 
 
@@ -169,12 +169,12 @@ Thrown when trying to perform an operation on a leaf node but that node has a ri
 ## INVALID_LEAF_NODE_NO_PARENT
 
 
-<a name="ferum_std_red_black_tree_INVALID_LEAF_NODE_NO_PARENT"></a>
+<a name="financer_std_red_black_tree_INVALID_LEAF_NODE_NO_PARENT"></a>
 
 Thrown when trying to perform an operation on a leaf node but that node has no parent.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_INVALID_LEAF_NODE_NO_PARENT">INVALID_LEAF_NODE_NO_PARENT</a>: u64 = 11;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_INVALID_LEAF_NODE_NO_PARENT">INVALID_LEAF_NODE_NO_PARENT</a>: u64 = 11;
 </code></pre>
 
 
@@ -184,12 +184,12 @@ Thrown when trying to perform an operation on a leaf node but that node has no p
 ## INVALID_NEXT_OPERATION
 
 
-<a name="ferum_std_red_black_tree_INVALID_NEXT_OPERATION"></a>
+<a name="financer_std_red_black_tree_INVALID_NEXT_OPERATION"></a>
 
 Thrown when trying to go to the next value or key in the iterator, when there isn't one!
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_INVALID_NEXT_OPERATION">INVALID_NEXT_OPERATION</a>: u64 = 13;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_INVALID_NEXT_OPERATION">INVALID_NEXT_OPERATION</a>: u64 = 13;
 </code></pre>
 
 
@@ -199,12 +199,12 @@ Thrown when trying to go to the next value or key in the iterator, when there is
 ## INVALID_OUTGOING_SWAP_EDGE_DIRECTION
 
 
-<a name="ferum_std_red_black_tree_INVALID_OUTGOING_SWAP_EDGE_DIRECTION"></a>
+<a name="financer_std_red_black_tree_INVALID_OUTGOING_SWAP_EDGE_DIRECTION"></a>
 
 Thrown when the edges being swapped doesn't define a valid edge direction.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_INVALID_OUTGOING_SWAP_EDGE_DIRECTION">INVALID_OUTGOING_SWAP_EDGE_DIRECTION</a>: u64 = 6;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_INVALID_OUTGOING_SWAP_EDGE_DIRECTION">INVALID_OUTGOING_SWAP_EDGE_DIRECTION</a>: u64 = 6;
 </code></pre>
 
 
@@ -214,12 +214,12 @@ Thrown when the edges being swapped doesn't define a valid edge direction.
 ## INVALID_ROTATION_NODES
 
 
-<a name="ferum_std_red_black_tree_INVALID_ROTATION_NODES"></a>
+<a name="financer_std_red_black_tree_INVALID_ROTATION_NODES"></a>
 
 Thrown when trying to perform an invalid rotation on the tree.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_INVALID_ROTATION_NODES">INVALID_ROTATION_NODES</a>: u64 = 3;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_INVALID_ROTATION_NODES">INVALID_ROTATION_NODES</a>: u64 = 3;
 </code></pre>
 
 
@@ -229,12 +229,12 @@ Thrown when trying to perform an invalid rotation on the tree.
 ## ITERATION_DIRECTION_MAX
 
 
-<a name="ferum_std_red_black_tree_ITERATION_DIRECTION_MAX"></a>
+<a name="financer_std_red_black_tree_ITERATION_DIRECTION_MAX"></a>
 
 When using an iterator, encodes the direction towards the next maximum value i.e. reverse inorder traversal.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_ITERATION_DIRECTION_MAX">ITERATION_DIRECTION_MAX</a>: u8 = 1;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_ITERATION_DIRECTION_MAX">ITERATION_DIRECTION_MAX</a>: u8 = 1;
 </code></pre>
 
 
@@ -244,12 +244,12 @@ When using an iterator, encodes the direction towards the next maximum value i.e
 ## ITERATION_DIRECTION_MIN
 
 
-<a name="ferum_std_red_black_tree_ITERATION_DIRECTION_MIN"></a>
+<a name="financer_std_red_black_tree_ITERATION_DIRECTION_MIN"></a>
 
 When using an iterator, encodes the direction towards the next minimum value i.e. inorder traversal.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_ITERATION_DIRECTION_MIN">ITERATION_DIRECTION_MIN</a>: u8 = 0;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_ITERATION_DIRECTION_MIN">ITERATION_DIRECTION_MIN</a>: u8 = 0;
 </code></pre>
 
 
@@ -259,12 +259,12 @@ When using an iterator, encodes the direction towards the next minimum value i.e
 ## ONLY_LEAF_NODES_CAN_BE_ADDED
 
 
-<a name="ferum_std_red_black_tree_ONLY_LEAF_NODES_CAN_BE_ADDED"></a>
+<a name="financer_std_red_black_tree_ONLY_LEAF_NODES_CAN_BE_ADDED"></a>
 
 Thrown when trying to add a non leaf node to the tree.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_ONLY_LEAF_NODES_CAN_BE_ADDED">ONLY_LEAF_NODES_CAN_BE_ADDED</a>: u64 = 7;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_ONLY_LEAF_NODES_CAN_BE_ADDED">ONLY_LEAF_NODES_CAN_BE_ADDED</a>: u64 = 7;
 </code></pre>
 
 
@@ -274,12 +274,12 @@ Thrown when trying to add a non leaf node to the tree.
 ## SUCCESSOR_FOR_LEAF_NODE
 
 
-<a name="ferum_std_red_black_tree_SUCCESSOR_FOR_LEAF_NODE"></a>
+<a name="financer_std_red_black_tree_SUCCESSOR_FOR_LEAF_NODE"></a>
 
 Thrown when trying to get the successor for a leaf node.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_SUCCESSOR_FOR_LEAF_NODE">SUCCESSOR_FOR_LEAF_NODE</a>: u64 = 5;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_SUCCESSOR_FOR_LEAF_NODE">SUCCESSOR_FOR_LEAF_NODE</a>: u64 = 5;
 </code></pre>
 
 
@@ -289,12 +289,12 @@ Thrown when trying to get the successor for a leaf node.
 ## TREE_IS_EMPTY
 
 
-<a name="ferum_std_red_black_tree_TREE_IS_EMPTY"></a>
+<a name="financer_std_red_black_tree_TREE_IS_EMPTY"></a>
 
 Thrown when trying to perform an operation on the tree that requires the tree to be non empty.
 
 
-<pre><code><b>const</b> <a href="red_black_tree.md#ferum_std_red_black_tree_TREE_IS_EMPTY">TREE_IS_EMPTY</a>: u64 = 0;
+<pre><code><b>const</b> <a href="red_black_tree.md#financer_std_red_black_tree_TREE_IS_EMPTY">TREE_IS_EMPTY</a>: u64 = 0;
 </code></pre>
 
 
@@ -304,144 +304,144 @@ Thrown when trying to perform an operation on the tree that requires the tree to
 # Functions
 
 
-<a name="ferum_std_red_black_tree_new"></a>
+<a name="financer_std_red_black_tree_new"></a>
 
 ## Function `new`
 
 Creates a new tree.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_new">new</a>&lt;V: <b>copy</b>, drop, store&gt;(): <a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_new">new</a>&lt;V: <b>copy</b>, drop, store&gt;(): <a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_is_empty"></a>
+<a name="financer_std_red_black_tree_is_empty"></a>
 
 ## Function `is_empty`
 
 Returns if the tree is empty.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_is_empty">is_empty</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): bool
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_is_empty">is_empty</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): bool
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_contains_key"></a>
+<a name="financer_std_red_black_tree_contains_key"></a>
 
 ## Function `contains_key`
 
 Returns true if the tree has at least one value with the given key.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_contains_key">contains_key</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): bool
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_contains_key">contains_key</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): bool
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_key_count"></a>
+<a name="financer_std_red_black_tree_key_count"></a>
 
 ## Function `key_count`
 
 Returns how many keys are in the tree.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_key_count">key_count</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): u128
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_key_count">key_count</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): u128
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_value_count"></a>
+<a name="financer_std_red_black_tree_value_count"></a>
 
 ## Function `value_count`
 
 Returns the total number of values in the tree.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_value_count">value_count</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): u128
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_value_count">value_count</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): u128
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_key_value_count"></a>
+<a name="financer_std_red_black_tree_key_value_count"></a>
 
 ## Function `key_value_count`
 
 Returns the total number of values for the given key.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_key_value_count">key_value_count</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): u128
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_key_value_count">key_value_count</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): u128
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_first_value_at"></a>
+<a name="financer_std_red_black_tree_first_value_at"></a>
 
 ## Function `first_value_at`
 
 Returns the first value with the givem key.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_first_value_at">first_value_at</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): &V
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_first_value_at">first_value_at</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): &V
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_values_at"></a>
+<a name="financer_std_red_black_tree_values_at"></a>
 
 ## Function `values_at`
 
 Returns all the values with the given key.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_values_at">values_at</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): <a href="">vector</a>&lt;V&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_values_at">values_at</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): <a href="">vector</a>&lt;V&gt;
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_values_at_list"></a>
+<a name="financer_std_red_black_tree_values_at_list"></a>
 
 ## Function `values_at_list`
 
 Returns all the values with the given key as a doubly linked list.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_values_at_list">values_at_list</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): &<a href="linked_list.md#ferum_std_linked_list_LinkedList">linked_list::LinkedList</a>&lt;V&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_values_at_list">values_at_list</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, key: u128): &<a href="linked_list.md#financer_std_linked_list_LinkedList">linked_list::LinkedList</a>&lt;V&gt;
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_max_key"></a>
+<a name="financer_std_red_black_tree_max_key"></a>
 
 ## Function `max_key`
 
 Returns the maximum key in the tree, if one exists.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_max_key">max_key</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): u128
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_max_key">max_key</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): u128
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_min_key"></a>
+<a name="financer_std_red_black_tree_min_key"></a>
 
 ## Function `min_key`
 
 Returns the minimum key in the tree, if one exists.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_min_key">min_key</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): u128
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_min_key">min_key</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;): u128
 </code></pre>
 
 
 
-<a name="ferum_std_red_black_tree_get_next_key"></a>
+<a name="financer_std_red_black_tree_get_next_key"></a>
 
 ## Function `get_next_key`
 
 Returns the next key and updates position.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#ferum_std_red_black_tree_get_next_key">get_next_key</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#ferum_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, position: &<b>mut</b> <a href="red_black_tree.md#ferum_std_red_black_tree_TreePosition">red_black_tree::TreePosition</a>&lt;V&gt;): u128
+<pre><code><b>public</b> <b>fun</b> <a href="red_black_tree.md#financer_std_red_black_tree_get_next_key">get_next_key</a>&lt;V: <b>copy</b>, drop, store&gt;(tree: &<a href="red_black_tree.md#financer_std_red_black_tree_Tree">red_black_tree::Tree</a>&lt;V&gt;, position: &<b>mut</b> <a href="red_black_tree.md#financer_std_red_black_tree_TreePosition">red_black_tree::TreePosition</a>&lt;V&gt;): u128
 </code></pre>

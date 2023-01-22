@@ -1,5 +1,5 @@
 [package]
-name = "FerumSTD"
+name = "FinancerSTD"
 version = "0.1.0"
 upgrade_policy = "compatible"
 license = "Apache-2.0"
@@ -8,4 +8,4 @@ license = "Apache-2.0"
 AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework/", rev = "devnet" }
 
 [addresses]
-ferum_std="0x33a6417b3846f094782adb6de9c0f6256c70502bf85e483d53140be0ff87a6fd"
+financer_std="0x8f3fd4fa708e5b3bff4019b801d2d3d0ae16cf430440fff32ede61c09e001ec6"

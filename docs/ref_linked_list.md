@@ -1,8 +1,8 @@
 ---
-description: ferum_std::ref_linked_list
+description: financer_std::ref_linked_list
 ---
 
-Same as <code>ferum_std::linked_list</code> but moves values into the list instead of copying them.
+Same as <code>financer_std::linked_list</code> but moves values into the list instead of copying them.
 This removes the requirement that the generic type needs the copy ability. But as a consequence,
 removing a particular value and checking to see if the list contains a value takes linear time (we can no longer
 store values in a table to lookup later).
@@ -29,7 +29,7 @@ sequentially using a u128 counter. So the maximum number of values that can be a
 
 
 ```
-use ferum_std::ref_linked_list::{Self, List};
+use financer_std::ref_linked_list::{Self, List};
 
 // A value that can't be copied.
 struct TestValue has store, drop {
@@ -85,26 +85,26 @@ ref_linked_list::get_next(&mut list, &mut iterator);
 
 
 
-<a name="ferum_std_ref_linked_list_LinkedList"></a>
+<a name="financer_std_ref_linked_list_LinkedList"></a>
 
 # Resource `LinkedList`
 
 Struct representing the linked list.
 
 
-<pre><code><b>struct</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">LinkedList</a>&lt;V: store&gt; <b>has</b> store, key
+<pre><code><b>struct</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">LinkedList</a>&lt;V: store&gt; <b>has</b> store, key
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_ListPosition"></a>
+<a name="financer_std_ref_linked_list_ListPosition"></a>
 
 # Struct `ListPosition`
 
 Used to represent a position within a doubly linked list during iteration.
 
 
-<pre><code><b>struct</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_ListPosition">ListPosition</a>&lt;V: store&gt; <b>has</b> <b>copy</b>, drop, store
+<pre><code><b>struct</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_ListPosition">ListPosition</a>&lt;V: store&gt; <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
 
@@ -119,12 +119,12 @@ Used to represent a position within a doubly linked list during iteration.
 ## DUPLICATE_KEY
 
 
-<a name="ferum_std_ref_linked_list_DUPLICATE_KEY"></a>
+<a name="financer_std_ref_linked_list_DUPLICATE_KEY"></a>
 
 Thrown when a duplicate key is added to the list.
 
 
-<pre><code><b>const</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_DUPLICATE_KEY">DUPLICATE_KEY</a>: u64 = 2;
+<pre><code><b>const</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_DUPLICATE_KEY">DUPLICATE_KEY</a>: u64 = 2;
 </code></pre>
 
 
@@ -134,12 +134,12 @@ Thrown when a duplicate key is added to the list.
 ## EMPTY_LIST
 
 
-<a name="ferum_std_ref_linked_list_EMPTY_LIST"></a>
+<a name="financer_std_ref_linked_list_EMPTY_LIST"></a>
 
 Thrown when a trying to perform an operation that requires a list to have elements but it doesn't.
 
 
-<pre><code><b>const</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_EMPTY_LIST">EMPTY_LIST</a>: u64 = 3;
+<pre><code><b>const</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_EMPTY_LIST">EMPTY_LIST</a>: u64 = 3;
 </code></pre>
 
 
@@ -149,12 +149,12 @@ Thrown when a trying to perform an operation that requires a list to have elemen
 ## KEY_NOT_FOUND
 
 
-<a name="ferum_std_ref_linked_list_KEY_NOT_FOUND"></a>
+<a name="financer_std_ref_linked_list_KEY_NOT_FOUND"></a>
 
 Thrown when the key for a given node is not found.
 
 
-<pre><code><b>const</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_KEY_NOT_FOUND">KEY_NOT_FOUND</a>: u64 = 1;
+<pre><code><b>const</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_KEY_NOT_FOUND">KEY_NOT_FOUND</a>: u64 = 1;
 </code></pre>
 
 
@@ -164,12 +164,12 @@ Thrown when the key for a given node is not found.
 ## MUST_HAVE_NEXT_VALUE
 
 
-<a name="ferum_std_ref_linked_list_MUST_HAVE_NEXT_VALUE"></a>
+<a name="financer_std_ref_linked_list_MUST_HAVE_NEXT_VALUE"></a>
 
 Thrown when attempting to iterate beyond the limit of the linked list.
 
 
-<pre><code><b>const</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_MUST_HAVE_NEXT_VALUE">MUST_HAVE_NEXT_VALUE</a>: u64 = 5;
+<pre><code><b>const</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_MUST_HAVE_NEXT_VALUE">MUST_HAVE_NEXT_VALUE</a>: u64 = 5;
 </code></pre>
 
 
@@ -179,12 +179,12 @@ Thrown when attempting to iterate beyond the limit of the linked list.
 ## VALUE_NOT_FOUND
 
 
-<a name="ferum_std_ref_linked_list_VALUE_NOT_FOUND"></a>
+<a name="financer_std_ref_linked_list_VALUE_NOT_FOUND"></a>
 
 Thrown when a value being searched for is not found.
 
 
-<pre><code><b>const</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_VALUE_NOT_FOUND">VALUE_NOT_FOUND</a>: u64 = 4;
+<pre><code><b>const</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_VALUE_NOT_FOUND">VALUE_NOT_FOUND</a>: u64 = 4;
 </code></pre>
 
 
@@ -194,12 +194,12 @@ Thrown when a value being searched for is not found.
 ## INDEX_BOUND_ERROR
 
 
-<a name="ferum_std_ref_linked_list_INDEX_BOUND_ERROR"></a>
+<a name="financer_std_ref_linked_list_INDEX_BOUND_ERROR"></a>
 
 Thrown when a trying to perform an operation outside the bounds of the list.
 
 
-<pre><code><b>const</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_INDEX_BOUND_ERROR">INDEX_BOUND_ERROR</a>: u64 = 4;
+<pre><code><b>const</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_INDEX_BOUND_ERROR">INDEX_BOUND_ERROR</a>: u64 = 4;
 </code></pre>
 
 
@@ -209,12 +209,12 @@ Thrown when a trying to perform an operation outside the bounds of the list.
 ## NON_EMPTY_LIST
 
 
-<a name="ferum_std_ref_linked_list_NON_EMPTY_LIST"></a>
+<a name="financer_std_ref_linked_list_NON_EMPTY_LIST"></a>
 
 Thrown when a trying to drop list but it is not empty.
 
 
-<pre><code><b>const</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_NON_EMPTY_LIST">NON_EMPTY_LIST</a>: u64 = 4;
+<pre><code><b>const</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_NON_EMPTY_LIST">NON_EMPTY_LIST</a>: u64 = 4;
 </code></pre>
 
 
@@ -224,163 +224,163 @@ Thrown when a trying to drop list but it is not empty.
 # Functions
 
 
-<a name="ferum_std_ref_linked_list_new"></a>
+<a name="financer_std_ref_linked_list_new"></a>
 
 ## Function `new`
 
 Initialize a new list.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_new">new</a>&lt;V: store&gt;(): <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_new">new</a>&lt;V: store&gt;(): <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_singleton"></a>
+<a name="financer_std_ref_linked_list_singleton"></a>
 
 ## Function `singleton`
 
 Creates a linked list with a single element.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_singleton">singleton</a>&lt;V: store&gt;(val: V): <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_singleton">singleton</a>&lt;V: store&gt;(val: V): <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_add"></a>
+<a name="financer_std_ref_linked_list_add"></a>
 
 ## Function `add`
 
 Add a value to the list.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_add">add</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, value: V)
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_add">add</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, value: V)
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_insert_at"></a>
+<a name="financer_std_ref_linked_list_insert_at"></a>
 
 ## Function `insert_at`
 
 Inserts a value to the given index.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_insert_at">insert_at</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, value: V, idx: u128)
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_insert_at">insert_at</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, value: V, idx: u128)
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_remove"></a>
+<a name="financer_std_ref_linked_list_remove"></a>
 
 ## Function `remove`
 
 Removes the value at the given index from the list.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_remove">remove</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, idx: u64): V
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_remove">remove</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, idx: u64): V
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_remove_first"></a>
+<a name="financer_std_ref_linked_list_remove_first"></a>
 
 ## Function `remove_first`
 
 Remove the first element of the list. If the list is empty, will throw an error.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_remove_first">remove_first</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): V
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_remove_first">remove_first</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): V
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_remove_last"></a>
+<a name="financer_std_ref_linked_list_remove_last"></a>
 
 ## Function `remove_last`
 
 Remove the last element of the list. If the list is empty, will throw an error.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_remove_last">remove_last</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): V
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_remove_last">remove_last</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): V
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_borrow_first"></a>
+<a name="financer_std_ref_linked_list_borrow_first"></a>
 
 ## Function `borrow_first`
 
 Get a reference to the first element of the list.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_borrow_first">borrow_first</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): &V
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_borrow_first">borrow_first</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): &V
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_borrow_last"></a>
+<a name="financer_std_ref_linked_list_borrow_last"></a>
 
 ## Function `borrow_last`
 
 Get a reference to the last element of the list.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_borrow_last">borrow_last</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): &V
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_borrow_last">borrow_last</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): &V
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_length"></a>
+<a name="financer_std_ref_linked_list_length"></a>
 
 ## Function `length`
 
 Returns the length of the list.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_length">length</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): u128
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_length">length</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): u128
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_is_empty"></a>
+<a name="financer_std_ref_linked_list_is_empty"></a>
 
 ## Function `is_empty`
 
 Returns true if empty.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_is_empty">is_empty</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): bool
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_is_empty">is_empty</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): bool
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_as_vector"></a>
+<a name="financer_std_ref_linked_list_as_vector"></a>
 
 ## Function `as_vector`
 
 Returns the list as a vector. The list itself is dropped.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_as_vector">as_vector</a>&lt;V: store&gt;(list: <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): <a href="">vector</a>&lt;V&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_as_vector">as_vector</a>&lt;V: store&gt;(list: <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): <a href="">vector</a>&lt;V&gt;
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_drop_empty_list"></a>
+<a name="financer_std_ref_linked_list_drop_empty_list"></a>
 
 ## Function `drop_empty_list`
 
 Drops an empty list, throwing an error if it is not empty.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_drop_empty_list">drop_empty_list</a>&lt;V: store&gt;(list: <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_drop_empty_list">drop_empty_list</a>&lt;V: store&gt;(list: <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;)
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_iterator"></a>
+<a name="financer_std_ref_linked_list_iterator"></a>
 
 ## Function `iterator`
 
@@ -388,24 +388,24 @@ Returns a left to right iterator. First time you call next(...) will return the 
 Updating the list while iterating will abort.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_iterator">iterator</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): <a href="ref_linked_list.md#ferum_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_iterator">iterator</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;): <a href="ref_linked_list.md#financer_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_has_next"></a>
+<a name="financer_std_ref_linked_list_has_next"></a>
 
 ## Function `has_next`
 
 Returns true if there is another element left in the iterator.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_has_next">has_next</a>&lt;V: store&gt;(position: &<a href="ref_linked_list.md#ferum_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;): bool
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_has_next">has_next</a>&lt;V: store&gt;(position: &<a href="ref_linked_list.md#financer_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;): bool
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_get_next"></a>
+<a name="financer_std_ref_linked_list_get_next"></a>
 
 ## Function `get_next`
 
@@ -413,24 +413,24 @@ Returns the next value, removing it from the list. Updates the current iterator 
 value.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_get_next">get_next</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, position: &<b>mut</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;): V
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_get_next">get_next</a>&lt;V: store&gt;(list: &<b>mut</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, position: &<b>mut</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;): V
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_skip_next"></a>
+<a name="financer_std_ref_linked_list_skip_next"></a>
 
 ## Function `skip_next`
 
 Updates the current iterator position to point to the next value.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_skip_next">skip_next</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, position: &<b>mut</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_skip_next">skip_next</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, position: &<b>mut</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;)
 </code></pre>
 
 
 
-<a name="ferum_std_ref_linked_list_peek_next"></a>
+<a name="financer_std_ref_linked_list_peek_next"></a>
 
 ## Function `peek_next`
 
@@ -438,5 +438,5 @@ Returns a reference to the next value in the iterator. Value isn't removed nor i
 updated.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#ferum_std_ref_linked_list_peek_next">peek_next</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#ferum_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, position: &<a href="ref_linked_list.md#ferum_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;): &V
+<pre><code><b>public</b> <b>fun</b> <a href="ref_linked_list.md#financer_std_ref_linked_list_peek_next">peek_next</a>&lt;V: store&gt;(list: &<a href="ref_linked_list.md#financer_std_ref_linked_list_LinkedList">ref_linked_list::LinkedList</a>&lt;V&gt;, position: &<a href="ref_linked_list.md#financer_std_ref_linked_list_ListPosition">ref_linked_list::ListPosition</a>&lt;V&gt;): &V
 </code></pre>

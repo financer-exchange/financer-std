@@ -1,8 +1,8 @@
 /// ---
-/// description: ferum_std::ref_linked_list
+/// description: financer_std::ref_linked_list
 /// ---
 ///
-/// Same as `ferum_std::linked_list` but moves values into the list instead of copying them.
+/// Same as `financer_std::linked_list` but moves values into the list instead of copying them.
 /// This removes the requirement that the generic type needs the copy ability. But as a consequence,
 /// removing a particular value and checking to see if the list contains a value takes linear time (we can no longer
 /// store values in a table to lookup later).
@@ -25,7 +25,7 @@
 /// # Quick Example
 ///
 /// ```
-/// use ferum_std::ref_linked_list::{Self, List};
+/// use financer_std::ref_linked_list::{Self, List};
 ///
 /// // A value that can't be copied.
 /// struct TestValue has store, drop {
@@ -77,13 +77,13 @@
 ///   ref_linked_list::get_next(&mut list, &mut iterator);
 /// };
 /// ```
-module ferum_std::ref_linked_list {
+module financer_std::ref_linked_list {
     use aptos_std::table_with_length as table;
     use std::vector;
     #[test_only]
     use std::string;
     #[test_only]
-    use ferum_std::test_utils::to_string_u128;
+    use financer_std::test_utils::to_string_u128;
     #[test_only]
     use std::string::String;
 

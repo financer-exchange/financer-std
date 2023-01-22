@@ -1,4 +1,4 @@
-module ferum_std::test_utils {
+module financer_std::test_utils {
     use std::string::{Self, String};
     use std::vector;
 

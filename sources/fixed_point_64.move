@@ -1,8 +1,8 @@
 /// ---
-/// description: ferum_std::fixed_point_64
+/// description: financer_std::fixed_point_64
 /// ---
 ///
-/// Ferum's implementation of a FixedPoint number.
+/// Financer's implementation of a FixedPoint number.
 /// Has fixed decimal places of 10 and a max value of
 /// `MAX_U64 (18446744073709551615)`.
 ///
@@ -11,7 +11,7 @@
 /// # Quick Example
 ///
 /// ```
-/// use ferum_std::fixed_point_64::{Self, FixedPoint64};
+/// use financer_std::fixed_point_64::{Self, FixedPoint64};
 ///
 /// /// Create fixed points from input.
 /// let a = fixed_point_64::from_u64(1024, 3); // 1.024
@@ -39,9 +39,9 @@
 /// let au64 = fixed_point_64::to_u64(a, 3);
 /// let bu64 = fixed_point_64::to_u64(b, 2);
 /// ```
-module ferum_std::fixed_point_64 {
+module financer_std::fixed_point_64 {
 
-    use ferum_std::math::{max_value_u128, sqrt_u128};
+    use financer_std::math::{max_value_u128, sqrt_u128};
 
     /// Fixedpoint struct. Can be stored, copied, and dropped.
     struct FixedPoint64 has store, drop, copy {

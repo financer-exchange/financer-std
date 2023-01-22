@@ -1,8 +1,8 @@
 /// ---
-/// description: ferum_std::red_black_tree
+/// description: financer_std::red_black_tree
 /// ---
 ///
-/// Ferum's implementation of a [Red Black Tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree).
+/// Financer's implementation of a [Red Black Tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree).
 /// A red black tree is a self balancing binary tree which performs rotations on tree manipulations to maintain a tree
 /// height of log(k), where k is the number of keys in the tree. Values with duplicate keys can be inserted into the
 /// tree; each value will stored in a linked list on each tree node. When a node no longer has any values, the node
@@ -22,7 +22,7 @@
 /// # Quick Example
 ///
 /// ```
-/// use ferum_std::red_black_tree::{Self, Tree};
+/// use financer_std::red_black_tree::{Self, Tree};
 ///
 /// // Create a tree with u128 values.
 /// let tree = red_black_tree::new<u128>();
@@ -49,19 +49,19 @@
 /// red_black_tree::delete_value(&mut tree, 100, 40);
 /// red_black_tree::delete_key(&mut tree, 90);
 /// ```
-module ferum_std::red_black_tree {
+module financer_std::red_black_tree {
     use std::vector;
     use aptos_std::table;
     #[test_only]
-    use ferum_std::test_utils::{to_string_u128, u128_from_string};
+    use financer_std::test_utils::{to_string_u128, u128_from_string};
     #[test_only]
-    use ferum_std::test_utils::to_string_vector;
+    use financer_std::test_utils::to_string_vector;
     #[test_only]
     use std::string::{Self, String};
     #[test_only]
-    use ferum_std::math::max_value_u128;
-    use ferum_std::linked_list::{LinkedList, ListPosition};
-    use ferum_std::linked_list;
+    use financer_std::math::max_value_u128;
+    use financer_std::linked_list::{LinkedList, ListPosition};
+    use financer_std::linked_list;
 
     //
     // ERRORS

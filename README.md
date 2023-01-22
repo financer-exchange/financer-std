@@ -1,21 +1,21 @@
-# Ferum Standard Library
+# Financer Standard Library
 
-Move is an awesome langauge, but since the ecosystem is still early, it's missing some fundemental pieces. Ferum STD is our way of giving back to the community by open sourcing core components that we've built in house for everyone's use. If you have any questions or concerns, [join our discord](https://discord.gg/rk9T4MuppY) and also, [follow us on twitter](twitter.com/ferumxyz/) for updates!
+Move is an awesome langauge, but since the ecosystem is still early, it's missing some fundemental pieces. Financer STD is our way of giving back to the community by open sourcing core components that we've built in house for everyone's use. If you have any questions or concerns, [join our discord](https://discord.gg/rk9T4MuppY) and also, [follow us on twitter](twitter.com/financerxyz/) for updates!
 
 ## List of Modules
 
-* [`ferum_std::fixed_point_64`](#fixed-point-full-docs) — Implementation of FixedPoint, helping manage decimal points represented as integers.
-* [`ferum_std::red_black_tree`](#red-black-tree-full-docs) — Implementation of Red Black Trees, a self-balancing binary search tree.
-* [`ferum_std::linked_list`](#linked-list-full-docs) — Implementation of a Doubly Linked List.
+* [`financer_std::fixed_point_64`](#fixed-point-full-docs) — Implementation of FixedPoint, helping manage decimal points represented as integers.
+* [`financer_std::red_black_tree`](#red-black-tree-full-docs) — Implementation of Red Black Trees, a self-balancing binary search tree.
+* [`financer_std::linked_list`](#linked-list-full-docs) — Implementation of a Doubly Linked List.
 
 ## Installing
 
-1\. Add `FerumSTD` in your [`Move.toml`](https://move-language.github.io/move/packages.html#movetoml) as a depdency following the example below:
+1\. Add `FinancerSTD` in your [`Move.toml`](https://move-language.github.io/move/packages.html#movetoml) as a depdency following the example below:
 
 ```
 [dependencies]
 AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework/", rev = "devnet" }
-FerumSTD = { git = "https://github.com/ferum-dex/ferum-std.git", rev = "main" }
+FinancerSTD = { git = "https://github.com/financer-dex/financer-std.git", rev = "main" }
 ```
 
 Use `rev = "main"` for latest and `rev = "devnet"` for devnet. There is no release for mainnet at this point.
@@ -25,21 +25,21 @@ Use `rev = "main"` for latest and `rev = "devnet"` for devnet. There is no relea
 3\. Import a module and start using it. For example:
 
 ```
-use ferum_std::fixed_point_64::{Self, FixedPoint64};
+use financer_std::fixed_point_64::{Self, FixedPoint64};
 ...
 let one = fixed_point_64::from_u64(1000, 3);
 ```
 
 ## Documentation
 
-There are some quick examples below for each module, but if you want to see more extensive docs for all the functions, checkout the [Ferum Standard Library Docs](https://ferum.gitbook.io/ferum-standard-library/).
+There are some quick examples below for each module, but if you want to see more extensive docs for all the functions, checkout the [Financer Standard Library Docs](https://financer.gitbook.io/financer-standard-library/).
 
 ## Quick Examples
 
 ### Fixed Point ([Full Docs](docs/fixed\_point\_64.md))
 
 ```
-use ferum_std::fixed_point_64::{Self, FixedPoint64};
+use financer_std::fixed_point_64::{Self, FixedPoint64};
 
 /// Create fixed points from input.
 let a = fixed_point_64::from_u64(1024, 3); // 1.024
@@ -71,7 +71,7 @@ let bu64 = fixed_point_64::to_u64(b, 2);
 ### Red Black Tree ([Full Docs](docs/red\_black\_tree.md))
 
 ```
-use ferum_std::red_black_tree::{Self, Tree};
+use financer_std::red_black_tree::{Self, Tree};
 
 // Create a tree with u128 values.
 let tree = red_black_tree::new<u128>();
@@ -107,7 +107,7 @@ red_black_tree::delete_key(&mut tree, 90);
 ### Linked List ([Full Docs](docs/linked\_list.md))
 
 ```
-use ferum_std::linked_list::{Self, List};
+use financer_std::linked_list::{Self, List};
 
 // Create a list with u128 values.
 let list = linked_list::new<u128>();

@@ -1,17 +1,17 @@
 ---
-description: ferum_std::fixed_point_64
+description: financer_std::fixed_point_64
 ---
 
 # FixedPoint64
 
-Ferum's implementation of a FixedPoint number. Has fixed decimal places of 10 and a max value of `MAX_U64 (18446744073709551615)`.
+Financer's implementation of a FixedPoint number. Has fixed decimal places of 10 and a max value of `MAX_U64 (18446744073709551615)`.
 
 Operations that result in an overflow will error out.
 
 ## Quick Example
 
 ```
-use ferum_std::fixed_point_64::{Self, FixedPoint64};
+use financer_std::fixed_point_64::{Self, FixedPoint64};
 
 /// Create fixed points from input.
 let a = fixed_point_64::from_u64(1024, 3); // 1.024
@@ -89,7 +89,7 @@ const ERR_EXCEED_MAX_EXP: u64 = 2;
 
 Thrown when decimals are lost and not truncating or rounding up. Possible examples:
 
-* calling [`to_u64`](fixed\_point\_64.md#ferum\_std\_fixed\_point\_64\_to\_u64)`()` to convert a number that has 6 decimal places into 5 decimal places, losing a digit
+* calling [`to_u64`](fixed\_point\_64.md#financer\_std\_fixed\_point\_64\_to\_u64)`()` to convert a number that has 6 decimal places into 5 decimal places, losing a digit
 * Dividing a number with 10 decimal places by 0.01, exceeding the max decimal places FixedPoint64 can represent.
 
 ```
@@ -108,7 +108,7 @@ const MAX_VALUE: u128 = 18446744073709551615;
 
 ### Function `new_u64`
 
-Create a new FixedPoint from a u64 value. No conversion is performed. Example: [`new_u64`](fixed\_point\_64.md#ferum\_std\_fixed\_point\_64\_new\_u64)`(12345) == 0.0000012345`
+Create a new FixedPoint from a u64 value. No conversion is performed. Example: [`new_u64`](fixed\_point\_64.md#financer\_std\_fixed\_point\_64\_new\_u64)`(12345) == 0.0000012345`
 
 ```
 public fun new_u64(val: u64): fixed_point_64::FixedPoint64
@@ -116,7 +116,7 @@ public fun new_u64(val: u64): fixed_point_64::FixedPoint64
 
 ### Function `new_u128`
 
-Create a new FixedPoint from a u128 value. No conversion is performed. Example: [`new_u128`](fixed\_point\_64.md#ferum\_std\_fixed\_point\_64\_new\_u128)`(12345) == 0.0000012345`
+Create a new FixedPoint from a u128 value. No conversion is performed. Example: [`new_u128`](fixed\_point\_64.md#financer\_std\_fixed\_point\_64\_new\_u128)`(12345) == 0.0000012345`
 
 ```
 public fun new_u128(val: u128): fixed_point_64::FixedPoint64

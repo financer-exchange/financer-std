@@ -1,8 +1,8 @@
 /// ---
-/// description: ferum_std::linked_list
+/// description: financer_std::linked_list
 /// ---
 ///
-/// Ferum's implementation of a doubly linked list. Values stored in the list should be cheap to copy. Duplicate values
+/// Financer's implementation of a doubly linked list. Values stored in the list should be cheap to copy. Duplicate values
 /// are supported.
 ///
 /// This list should be used for values that are cheap to copy. For a list that stores by moving values, see
@@ -25,7 +25,7 @@
 /// # Quick Example
 ///
 /// ```
-/// use ferum_std::linked_list::{Self, List};
+/// use financer_std::linked_list::{Self, List};
 ///
 /// // Create a list with u128 values.
 /// let list = linked_list::new<u128>();
@@ -60,13 +60,13 @@
 /// linked_list::remove_first(&list);
 /// print_list(&list) // 50 <-> 20 <-> 200
 /// ```
-module ferum_std::linked_list {
+module financer_std::linked_list {
     use aptos_std::table_with_length as table;
     use std::vector;
     #[test_only]
     use std::string;
     #[test_only]
-    use ferum_std::test_utils::to_string_u128;
+    use financer_std::test_utils::to_string_u128;
     #[test_only]
     use std::string::String;
 
